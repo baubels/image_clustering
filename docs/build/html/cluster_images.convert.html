@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>cluster_images.convert module &mdash; Image Clustering 0.1 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/copybutton.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+        <script src="_static/clipboard.min.js"></script>
+        <script src="_static/copybutton.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="cluster_images.hog module" href="cluster_images.hog.html" />
+    <link rel="prev" title="cluster_images package" href="cluster_images.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> Image Clustering
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">image_clustering</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="cluster_images.html">cluster_images package</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="cluster_images.html#submodules">Submodules</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">cluster_images.convert module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cluster_images.hog.html">cluster_images.hog module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cluster_images.hog_configs.html">cluster_images.hog_configs module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cluster_images.neural.html">cluster_images.neural module</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="cluster_images.html#module-cluster_images">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="setup.html">setup module</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Image Clustering</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="modules.html">image_clustering</a></li>
+          <li class="breadcrumb-item"><a href="cluster_images.html">cluster_images package</a></li>
+      <li class="breadcrumb-item active">cluster_images.convert module</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/cluster_images.convert.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-cluster_images.convert">
+<span id="cluster-images-convert-module"></span><h1>cluster_images.convert module<a class="headerlink" href="#module-cluster_images.convert" title="Permalink to this heading"></a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="cluster_images.convert.KMeans_Elbow">
+<span class="sig-prename descclassname"><span class="pre">cluster_images.convert.</span></span><span class="sig-name descname"><span class="pre">KMeans_Elbow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cluster_range</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(2,</span> <span class="pre">100)</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cluster_images/convert.html#KMeans_Elbow"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#cluster_images.convert.KMeans_Elbow" title="Permalink to this definition"></a></dt>
+<dd><dl class="simple">
+<dt>Apply KMeans to data <cite>cluster_range[1]-cluster_range[0]</cite> times.</dt><dd><p>Compute and plot cluster distortions for each cluster count in <cite>cluster_range</cite>.
+Predict optimal cluster count based on the elbow method.</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">ndarray</span></code>) – A nxp sized NumPy array of data to apply KMeans clustering to.</p></li>
+<li><p><strong>cluster_range</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">tuple</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>]) – The range of clusters of consider for KMeans and analysis. Defaults to (2,100).</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="simple">
+<dt>More information on the KElbowVisualizer and arguments available can be found here:</dt><dd><p><a class="reference external" href="https://www.scikit-yb.org/en/latest/api/cluster/elbow.html">https://www.scikit-yb.org/en/latest/api/cluster/elbow.html</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="cluster_images.convert.KMeans_clustering">
+<span class="sig-prename descclassname"><span class="pre">cluster_images.convert.</span></span><span class="sig-name descname"><span class="pre">KMeans_clustering</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_clusters</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">45</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cluster_images/convert.html#KMeans_clustering"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#cluster_images.convert.KMeans_clustering" title="Permalink to this definition"></a></dt>
+<dd><p>Apply KMeans clustering to <cite>data</cite> using <cite>n_clusters</cite> clusters.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">ndarray</span></code>) – A nxp sized NumPy array.</p></li>
+<li><p><strong>n_clusters</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) – The number of clusters to use in the KMeans algorithm. Defaults to 45.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A trained KMeans model on <cite>data</cite> using <cite>n_clusters</cite> clusters.
+A (data.shape[0],) sized NumPy array denoting the cluster number each datapoint is assigned to.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>A tuple containing</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="cluster_images.convert.load_dataset">
+<span class="sig-prename descclassname"><span class="pre">cluster_images.convert.</span></span><span class="sig-name descname"><span class="pre">load_dataset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'caltech-101/101_ObjectCategories/'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">image_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(96,</span> <span class="pre">96)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">32</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cluster_images/convert.html#load_dataset"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#cluster_images.convert.load_dataset" title="Permalink to this definition"></a></dt>
+<dd><p>Loads the Caltech-101 Dataset downloaded in directory <cite>dir</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dir</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – The directory where the caltech-101 dataset is stored. Defaults to ‘caltech-101/101_ObjectCategories/’.</p></li>
+<li><p><strong>image_size</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">tuple</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>]) – The width and height of images to rescale directory dataset to.</p></li>
+<li><p><strong>batch_size</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) – The size of batches. Change depending on computational performance.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">DatasetV2</span></code></p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A Tensorflow BatchDataset.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="cluster_images.convert.normalise_features">
+<span class="sig-prename descclassname"><span class="pre">cluster_images.convert.</span></span><span class="sig-name descname"><span class="pre">normalise_features</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">features</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cluster_images/convert.html#normalise_features"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#cluster_images.convert.normalise_features" title="Permalink to this definition"></a></dt>
+<dd><p>Normalise descriptor features to have mean = 0 and sd = 1.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>hogs</strong> – A nxp sized NumPy array of HOG descriptors.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A nxp sized NumPy array of HOG descriptors with normalised features.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>np.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="cluster_images.convert.reduce_with_LLE">
+<span class="sig-prename descclassname"><span class="pre">cluster_images.convert.</span></span><span class="sig-name descname"><span class="pre">reduce_with_LLE</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_components</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">50</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cluster_images/convert.html#reduce_with_LLE"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#cluster_images.convert.reduce_with_LLE" title="Permalink to this definition"></a></dt>
+<dd><p>Do Locally Linear Embedding on data, keeping the top <cite>n_components</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">ndarray</span></code>) – A nxp sized NumPy array of data to do PCA with.
+Features are assumed to be normalised.
+The Euclidean distance metric is used.</p></li>
+<li><p><strong>n_components</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) – The number of most varied features to keep. Defaults to 50.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">ndarray</span></code></p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A nxn_components sized NumPy array of PCA reduced data.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="cluster_images.convert.reduce_with_PCA">
+<span class="sig-prename descclassname"><span class="pre">cluster_images.convert.</span></span><span class="sig-name descname"><span class="pre">reduce_with_PCA</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_components</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">50</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cluster_images/convert.html#reduce_with_PCA"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#cluster_images.convert.reduce_with_PCA" title="Permalink to this definition"></a></dt>
+<dd><p>Do PCA on data, keeping the top <cite>n_components</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">ndarray</span></code>) – A nxp sized NumPy array of data to do PCA with.
+Features are assumed to be normalised.
+The Euclidean distance metric is used.</p></li>
+<li><p><strong>n_components</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) – The number of most varied features to keep. Defaults to 50.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">ndarray</span></code></p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A nxn_components sized NumPy array of PCA reduced data.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="cluster_images.convert.reduce_with_Spectral">
+<span class="sig-prename descclassname"><span class="pre">cluster_images.convert.</span></span><span class="sig-name descname"><span class="pre">reduce_with_Spectral</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_components</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">50</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cluster_images/convert.html#reduce_with_Spectral"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#cluster_images.convert.reduce_with_Spectral" title="Permalink to this definition"></a></dt>
+<dd><p>Do Spectral Embedding on data, keeping the top <cite>n_components</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">ndarray</span></code>) – A nxp sized NumPy array of data to do PCA with.
+Features are assumed to be normalised.
+The Euclidean distance metric is used.</p></li>
+<li><p><strong>n_components</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) – The number of most varied features to keep. Defaults to 50.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">ndarray</span></code></p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A nxn_components sized NumPy array of PCA reduced data.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="cluster_images.html" class="btn btn-neutral float-left" title="cluster_images package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="cluster_images.hog.html" class="btn btn-neutral float-right" title="cluster_images.hog module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright .</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
