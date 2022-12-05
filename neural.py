@@ -54,6 +54,7 @@ def create_neural_descriptors(dataset:tf.data.Dataset) -> np.ndarray:
     # create descriptors
     embedding = []
     for x,_ in dataset:
+        assert x.shape[1:] == (96,96,3), "Please ensure that your dataset is of RGB images of size (None, 96,96,3)."
         embedding.append(model(x))
     return np.concatenate(embedding, axis=0)
 
