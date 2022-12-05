@@ -6,7 +6,7 @@ from sklearn.manifold import SpectralEmbedding, LocallyLinearEmbedding
 from sklearn.cluster import KMeans
 from yellowbrick.cluster import KElbowVisualizer
 import numpy as np
-from hog_configs import *
+from cluster_images.hog_configs import *
 
 
 def load_dataset(dir:str='caltech-101/101_ObjectCategories/', image_size:tuple[int]=(96,96), batch_size:int=32) -> tf.data.Dataset:
