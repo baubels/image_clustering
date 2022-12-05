@@ -6,6 +6,8 @@ from yellowbrick.cluster import KElbowVisualizer
 import tensorflow.compat.v2 as tf
 import numpy as np
 
+
+
 def load_dataset(dir: str = 'caltech-101/101_ObjectCategories/', image_size: tuple[int, int] = (96, 96), batch_size: int = 32) -> tf.data.Dataset:
     """Loads the Caltech-101 Dataset downloaded in directory `dir`.
 
