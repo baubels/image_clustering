@@ -6,8 +6,8 @@ I implement a few functions to do Image Clustering of a large set of same-scene 
 Full usage can be found in `usage_and_visuals.ipynb`.
 
 ```python
-import hog
-import neural
+import cluster_images.hog as hog
+import cluster_images.neural as neural
 
 ds = hog.load_dataset() # can also use neural.load_dataset()
 
