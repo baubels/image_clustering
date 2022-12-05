@@ -24,6 +24,6 @@ neural_descriptors = convert.normalise_features(neural_descriptors)
 # reduce dimensionality
 neural_LLE = convert.reduce_with_LLE(neural_descriptors, n_components=50)    # can also try .reduce_with_PCA, .reduce_with_Spectral
 
-# construct kmeans clusters and label
-neural_LLE_kmeans, neural_LLE_clustering = convert.KMeans_clustering(neural_LLE)
+# construct kmeans clusters and label (45 clusters assumed as standard)
+neural_LLE_kmeans, neural_LLE_clustering = convert.KMeans_clustering(neural_LLE, n_clusters=45)
 ```
