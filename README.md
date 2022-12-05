@@ -10,11 +10,14 @@ import hog
 import neural
 
 ds = hog.load_dataset() # can also use neural.load_dataset()
+
 # create descriptors using MobileNetV2
-neural_descriptors = neural.create_neural_descriptors(ds)           # can also use hog.x
-neural_descriptors = neural.normalise_features(neural_descriptors)  # can also use hog.x
+neural_descriptors = neural.create_neural_descriptors(ds)                   # can also use hog.x
+neural_descriptors = neural.normalise_features(neural_descriptors)          # can also use hog.x
+
 # reduce dimensionality
-neural_LLE = neural.reduce_with_LLE(neural_descriptors, n_components=50) # can also try .reduce_with_PCA, .reduce_with_Spectral
+neural_LLE = neural.reduce_with_LLE(neural_descriptors, n_components=50)    # can also try .reduce_with_PCA, .reduce_with_Spectral
+
 # construct kmeans clusters and label
 neural_LLE_kmeans, neural_LLE_clustering = neural.KMeans_clustering(neural_LLE)
 ```
