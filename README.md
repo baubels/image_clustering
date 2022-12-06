@@ -40,7 +40,7 @@ neural_LLE_kmeans, neural_LLE_clustering = convert.KMeans_clustering(neural_LLE,
 
 `neural_LLE_clustering` are the cluster labels for the `neural_LLE` data provided.
 
-#### P.S
+#### P.S.
 There are a few more improvements available that I had not mentioned in the report, especially in terms of computational efficiency. Running tensorflow lite, or micro instead of the full thing; quantisation of neural networks; parallel testing of clusters; GPU implementations (hardward dependent); C++ implementations.
 
 An interesting paper I read showcased in a TinyML conference was that of considering an attention-mechanism to first grab a crop of an area-of-interest in an image, followed by classification, or in this case embeddings. This is a biologically-inspired mechanism found in owl eyes.
