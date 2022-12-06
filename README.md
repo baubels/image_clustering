@@ -10,6 +10,14 @@ It should have file path structure `caltech-101/101_ObjectCategories/...`. For p
 
 #### Sample Usage
 
+```
+python3 -m venv cluster_images_venv
+source cluster_images_venv/bin/activate
+git clone https://github.com/baubels/image_clustering.git
+pip install -r requirements.txt
+cd image_clustering
+```
+
 ```python
 import cluster_images.convert as convert
 import cluster_images.hog as hog
