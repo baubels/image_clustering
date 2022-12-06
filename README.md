@@ -35,3 +35,7 @@ neural_LLE = convert.reduce_with_LLE(neural_descriptors, n_components=50)    # c
 # construct kmeans clusters and label (45 clusters assumed as standard)
 neural_LLE_kmeans, neural_LLE_clustering = convert.KMeans_clustering(neural_LLE, n_clusters=45)
 ```
+
+`neural_LLE_kmeans` is a fitted `KMeans` model, able to predict clusters based on input points.
+
+`neural_LLE_clustering` are the cluster labels for the `neural_LLE` data provided.
